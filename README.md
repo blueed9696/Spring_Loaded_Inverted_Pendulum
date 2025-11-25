@@ -4,7 +4,7 @@ This project simulates a Spring-Loaded Inverted Pendulum (SLIP) model, demonstra
 
 ## Simulation
 
-<video src="assets/spring.gif" autoplay loop muted playsinline width="100%"></video>
+![spring animation](assets/spring.gif)
 
 ## Project Structure
 
