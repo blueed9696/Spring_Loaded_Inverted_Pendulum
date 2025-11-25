@@ -1,6 +1,6 @@
 # Spring_Loaded_Inverted_Pendulum
 
-This project simulates a Spring-Loaded Inverted Pendulum (SLIP) model, demonstrating the dynamics of a hopping robot or animal.
+This project simulates a Spring-Loaded Inverted Pendulum (SLIP) model, demonstrating the dynamics of a humanoid leg.
 
 ## Simulation
 
