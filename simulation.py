@@ -256,10 +256,6 @@ def simulate_one_step(
         max_step=0.01,
     )
 
-    if sol_f2.t_events[0].size == 0:
-        print(f"[simulate_one_step] No next apex found at step {apex.step_idx}.")
-        return None
-
     t_f2    = sol_f2.t
     x_f2    = sol_f2.y[0]
     y_f2    = sol_f2.y[1]
@@ -288,7 +284,7 @@ def simulate_one_step(
     is_stance = np.zeros(len_f1 + len_st + len_f2, dtype=bool)
     is_stance[len_f1 : len_f1 + len_st] = True
 
-    # foot x per frame (constant during this step; NaN during flight if you prefer)
+    # foot x per frame
     foot_x_array = np.full_like(t_array, np.nan, dtype=float)
     foot_x_array[len_f1 : len_f1 + len_st] = foot_x
 
@@ -340,8 +336,6 @@ def simulate_multiple_steps(
             all_stance = stance_step
             all_foot_x = foot_x_step
         else:
-            # skip the first sample of the new step to avoid duplicating
-            # the last sample of the previous step
             all_t      = np.concatenate([all_t,      t_step_global[1:]])
             all_x      = np.concatenate([all_x,      x_step[1:]])
             all_y      = np.concatenate([all_y,      y_step[1:]])
